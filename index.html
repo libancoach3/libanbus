@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Liban Bus Ltd — Book Bus Tickets Online in Kenya & Ethiopia</title>
+  <meta name="description" content="Book Liban Bus Ltd tickets online across Nairobi, Addis Ababa and northern Kenya.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <a class="brand" href="#" aria-label="Liban Bus Ltd home">
+      <img src="__l5e/assets-v1/b3e20126-60ee-4eb4-9fe7-2b4d96489303/liban-bus-service-logo.jpg" alt="Liban Bus Ltd logo">
+      <div class="brand-copy">
+        <strong>Liban Bus Ltd</strong>
+        <span>Safe travel, every route</span>
+      </div>
+    </a>
+    <button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="nav">
+      <a href="#routes">Routes</a>
+      <a href="#timetable">Timetable</a>
+      <a href="#why-us">Why us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <div class="hero-kicker">Nairobi · Addis Ababa · Nakuru · Eldoret · North Eastern · Northern Kenya</div>
+          <h1>Book your Liban Bus seat<br>in under two minutes</h1>
+          <p>Daily scheduled coaches across Nairobi, Addis Ababa, Nakuru, Eldoret, Kitale, Garissa, Wajir, Mandera, Isiolo, Marsabit, Moyale, Kakuma, Kainuk, Lodwar and Lokichar. Choose your seat, pay by M-Pesa and travel with an instant e-ticket.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#routes">View routes &amp; fares <span>→</span></a>
+            <a class="button button-outline" href="https://wa.me/254785133968" target="_blank" rel="noopener">Book on WhatsApp</a>
+          </div>
+        </div>
+
+        <form class="booking-card" id="bookingForm">
+          <div class="route-row">
+            <label class="field">
+              <span>From</span>
+              <select id="fromSelect">
+                <option>Nairobi</option><option>Addis Ababa</option><option>Nakuru</option><option>Eldoret</option>
+                <option>Garissa</option><option>Wajir</option><option>Mandera</option><option>Isiolo</option>
+                <option>Marsabit</option><option>Moyale</option><option>Kakuma</option><option>Lodwar</option>
+              </select>
+            </label>
+            <button class="swap-button" id="swapButton" type="button" aria-label="Swap towns">⇄</button>
+            <label class="field">
+              <span>To</span>
+              <select id="toSelect">
+                <option>Garissa</option><option>Nairobi</option><option>Addis Ababa</option><option>Wajir</option>
+                <option>Mandera</option><option>Isiolo</option><option>Marsabit</option><option>Moyale</option>
+                <option>Eldoret</option><option>Kakuma</option><option>Lodwar</option>
+              </select>
+            </label>
+          </div>
+          <div class="details-row">
+            <label class="field date-field">
+              <span>Travel date</span>
+              <input id="travelDate" type="date">
+            </label>
+            <div class="passengers-field">
+              <span>Passengers</span>
+              <div class="counter">
+                <button id="minusPassenger" type="button" aria-label="Remove a passenger">−</button>
+                <div><span id="passengerCount">1</span> <small id="seatLabel">seat</small></div>
+                <button id="plusPassenger" type="button" aria-label="Add a passenger">+</button>
+              </div>
+            </div>
+            <button class="search-button" type="submit">⌕ <span>Search buses</span></button>
+          </div>
+          <p class="fare-line">Fare KES <strong id="farePerSeat">1,500</strong> per seat · <b>Total KES <span id="fareTotal">1,500</span></b> for <span id="seatCountText">1 seat</span></p>
+          <button class="booking-button" type="button" id="whatsappBooking">◉ <span>Select seats &amp; book on WhatsApp</span></button>
+        </form>
+      </div>
+    </section>
+
+    <section class="section popular" id="routes">
+      <div class="section-heading">
+        <div><p class="eyebrow">Quick book</p><h2>Popular routes</h2><p class="section-subtitle">One-way adult fares. Children under 3 travel free on a guardian's lap.</p></div>
+        <a class="all-link" href="#timetable">All routes <span>→</span></a>
+      </div>
+      <div class="route-grid" id="routeGrid"></div>
+    </section>
+
+    <section class="section timetable-section" id="timetable">
+      <div class="section-heading">
+        <div><p class="eyebrow">Timetable</p><h2>All routes</h2><p class="section-subtitle">Every scheduled service with daily departure times and the coach class on each run.</p></div>
+        <a class="all-link" href="#routeTable">Open full timetable <span>→</span></a>
+      </div>
+      <div class="timetable-grid" id="routeTable"></div>
+    </section>
+
+    <section class="booking-steps" id="why-us">
+      <h2>How booking works</h2>
+      <div class="steps-grid">
+        <article><span>1</span><h3>Search</h3><p>Choose your route, travel date and number of seats.</p></article>
+        <article><span>2</span><h3>Pick seats</h3><p>See the live seat map and select where you sit.</p></article>
+        <article><span>3</span><h3>Pay</h3><p>Pay by M-Pesa, card, or reserve and pay at office.</p></article>
+        <article><span>4</span><h3>Travel</h3><p>Get an instant e-ticket with your booking code.</p></article>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <div class="about-copy">
+        <p class="eyebrow">About us</p>
+        <h2>A coach service built on keeping its timetable</h2>
+        <p>Liban Bus Ltd runs daily scheduled coaches on the Nairobi, Addis Ababa, North Eastern and Northern Kenya corridors. Our fleet is licensed, insured and GPS tracked, crews work in pairs on overnight services, and our booking desk in Eastleigh answers on the first ring.</p>
+        <div class="about-actions"><a class="text-link" href="#contact">More about us</a><a class="text-link" href="#contact">Booking offices</a></div>
+      </div>
+      <div class="service-grid">
+        <article><span>01</span><h3>Online ticket booking</h3><p>Search any of our routes, see live seat maps and confirm in minutes.</p></article>
+        <article><span>02</span><h3>Return tickets</h3><p>Book the outbound and the return leg on the same request.</p></article>
+        <article><span>03</span><h3>M-Pesa &amp; card payment</h3><p>Pay how you prefer, or reserve now and settle at any booking office.</p></article>
+        <article><span>04</span><h3>Customer support</h3><p>Our booking desk answers on WhatsApp and by phone, 6am to 10pm daily.</p></article>
+      </div>
+    </section>
+
+    <section class="why-section">
+      <h2>Why travel with Liban Bus</h2>
+      <div class="why-grid">
+        <article><span>01</span><h3>Licensed &amp; insured</h3><p>NTSA compliant fleet with tracked GPS on every coach.</p></article>
+        <article><span>02</span><h3>Daily departures</h3><p>Morning, midday, afternoon and overnight services.</p></article>
+        <article><span>03</span><h3>Comfort on board</h3><p>Reclining seats, charging ports and Wi-Fi on business coaches.</p></article>
+        <article><span>04</span><h3>Real people on call</h3><p>Our booking desk answers 6am to 10pm, every day.</p></article>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <h2>What passengers say</h2>
+      <div class="testimonial-grid">
+        <figure><blockquote>“The coach left on time and the crew kept us updated at every stop. Booking on WhatsApp took two minutes.”</blockquote><figcaption><strong>Amina H.</strong><span>Nairobi → Mandera</span></figcaption></figure>
+        <figure><blockquote>“I travel this route for business every month. The VIP recliner service is by far the most comfortable option.”</blockquote><figcaption><strong>Yusuf A.</strong><span>Nairobi → Addis Ababa</span></figcaption></figure>
+        <figure><blockquote>“Clear fares, no haggling and my seat was exactly the one I picked. I now book for my whole team here.”</blockquote><figcaption><strong>Grace W.</strong><span>Eldoret → Kakuma</span></figcaption></figure>
+      </div>
+    </section>
+
+    <section class="travel-cta">
+      <h2>Ready to travel with Liban Bus Ltd?</h2>
+      <p>Seats on the overnight services fill fast. Reserve yours now and pay by M-Pesa.</p>
+      <div><a href="#routes">Browse departures</a><a href="#bookingForm">Find my ticket</a><a href="https://wa.me/254785133968" target="_blank" rel="noopener">Book on WhatsApp</a></div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="footer-grid">
+      <div class="footer-brand"><h3>Liban Bus Ltd</h3><p>Daily scheduled coach services across Nairobi, Addis Ababa, North Eastern and Northern Kenya. Licensed, insured and tracked end to end.</p></div>
+      <div><h4>Popular routes</h4><a href="#routes">Nairobi → Garissa</a><a href="#routes">Nairobi → Wajir</a><a href="#routes">Nairobi → Mandera</a><a href="#routes">Nairobi → Addis Ababa</a><a href="#routes">Addis Ababa → Nairobi</a></div>
+      <div><h4>Explore</h4><a href="#routes">Routes &amp; fares</a><a href="#bookingForm">My tickets</a><a href="#why-us">About us</a><a href="#contact">Contact</a></div>
+      <div><h4>Booking office</h4><p>Eastleigh, 3rd Street, opposite Ryan Lodge, Nairobi</p><a href="tel:+254107080689">0107 080 689</a><a href="mailto:libanservice798@gmail.com">libanservice798@gmail.com</a><a href="https://wa.me/254785133968" target="_blank" rel="noopener">Book on WhatsApp</a></div>
+    </div>
+    <p class="copyright">© 2026 Liban Bus Ltd. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
