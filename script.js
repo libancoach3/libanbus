@@ -33,6 +33,29 @@ const timetable = [
   ["Kakuma", "Kitale", "2,000", "15:30 · 20:30", "7h 00m · 430 km"]
 ];
 
+const fareByRoute = {
+  "Nairobi|Garissa": 1500,
+  "Nairobi|Wajir": 3000,
+  "Nairobi|Mandera": 5000,
+  "Nairobi|Addis Ababa": 7500,
+  "Nairobi|Isiolo": 1200,
+  "Nairobi|Marsabit": 2200,
+  "Nairobi|Moyale": 2500,
+  "Nairobi|Kakuma": 3500,
+  "Nairobi|Kainuk": 2500,
+  "Nairobi|Lodwar": 2000,
+  "Nairobi|Lokichar": 2200,
+  "Nakuru|Kakuma": 3000,
+  "Garissa|Wajir": 1300,
+  "Garissa|Dadaab": 900,
+  "Wajir|Mandera": 1600,
+  "Eldoret|Kakuma": 2500,
+  "Kakuma|Eldoret": 2500,
+  "Kitale|Kakuma": 2000,
+  "Kakuma|Kitale": 2000,
+  "Addis Ababa|Nairobi": 7500
+};
+
 const routeGrid = document.getElementById("routeGrid");
 popularRoutes.forEach(([from, to, duration, fare]) => {
   const card = document.createElement("a");
@@ -76,10 +99,8 @@ const minusPassenger = document.getElementById("minusPassenger");
 function updateFare() {
   const from = document.getElementById("fromSelect").value;
   const to = document.getElementById("toSelect").value;
-  const route = popularRoutes.find(([rFrom, rTo]) => rFrom === from && rTo === to);
-  const fallback = timetable.find(([rFrom, rTo]) => rFrom === from && rTo === to);
-  const fare = route ? route[3] : fallback ? fallback[2] : "1,500";
-  const numericFare = Number(fare.replace(/,/g, ""));
+  const numericFare = fareByRoute[`${from}|${to}`] || fareByRoute[`${to}|${from}`] || 0;
+  const fare = numericFare ? numericFare.toLocaleString("en-US") : "—";
   document.getElementById("farePerSeat").textContent = fare;
   document.getElementById("fareTotal").textContent = (numericFare * passengers).toLocaleString("en-US");
   passengerCount.textContent = passengers;
