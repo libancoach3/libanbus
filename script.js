@@ -137,7 +137,7 @@ document.getElementById("whatsappBooking").addEventListener("click", () => {
   const date = document.getElementById("travelDate").value;
   const total = document.getElementById("fareTotal").textContent;
   const message = `Hello Liban Bus, I'd like to book ${passengers} seat(s) from ${from} to ${to} on ${date}. Estimated total: KES ${total}.`;
-  window.open(`https://wa.me/254785133968?text=${encodeURIComponent(message)}`, "_blank");
+  window.open(`https://wa.me/254734690395?text=${encodeURIComponent(message)}`, "_blank");
 });
 
 updateFare();
